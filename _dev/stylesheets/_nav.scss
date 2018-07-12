@@ -10,9 +10,17 @@ div.logo-menu-container {
     left:0;
   }
   nav {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
     @media (min-width: 40rem) {
       display: flex;
       justify-content: space-between;
+      position: initial;
+      left: initial;
+      top: initial;
+      transform: initial;
     }
     ul {
       padding: 0;
@@ -21,13 +29,13 @@ div.logo-menu-container {
         display: flex;
       }
       li {
-        padding: 5px;
+        padding: 15px 5px;
         a {
           text-decoration: none;
           color: #444;
           position: relative;
           padding: 0 1.25rem;
-          font-size:1.35rem;
+          font-size: 2rem;
           text-transform:uppercase;
           transition: $animate;
           position: relative;
@@ -41,7 +49,10 @@ div.logo-menu-container {
             margin: 2px 0 0;
             transition: $animate;
             transition-duration: 0.5s;
-            opacity: 0;
+            opacity: 1;
+            @media (min-width: 40rem) {
+              opacity: 0;
+            }           
           }
           &:before {
             left: calc(50%);
@@ -90,11 +101,16 @@ div.logo-menu-container {
   display: none;
 }
 
+.main-nav {
+  
+}
+
 @media (min-width: 40rem) {
   div.logo-menu-container {
     &.scroll-hide-nav {
       ul li a {
         color: white;
+        font-size: 1.35rem;
         &:before {
           background-color: white;
         }
@@ -114,6 +130,7 @@ div.logo-menu-container {
       display: block;   
       ul li a {
         color: #444;
+        font-size: 1.35rem;
         &:before {
           background-color: #444;
         }
