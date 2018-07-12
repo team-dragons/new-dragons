@@ -1,0 +1,11 @@
+
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 425.56 320.84" height="320.84" width="425.56" xml:space="preserve" version="1.1">
+  <g transform="matrix(1.3333333,0,0,-1.3333333,0,320.84)">
+    <g transform="scale(0.1)">
+      <path class="fill" d="M 0,748.738 612.309,1688.68 H 78.5781 v 53.37 H 702.75 v -14.82 L 91.9219,787.281 H 719.055 v -53.39 H 0 v 14.847" />
+      <path class="fill" d="M 1904.78,1742.05 H 1970 l 246.11,-810.96 c 7.42,-26.68 14.83,-66.731 16.32,-72.649 0,4.45 8.89,45.969 19.27,72.649 l 289.1,822.83 h 17.78 L 2847.7,931.09 c 8.89,-26.68 16.3,-66.731 17.79,-72.649 0,4.45 8.89,45.969 17.78,72.649 l 246.11,810.96 h 62.27 L 2875.86,722.039 h -16.31 l -293.54,836.181 c -8.9,26.68 -14.84,63.75 -16.31,72.64 -1.49,-5.93 -8.9,-44.47 -17.8,-72.64 L 2236.87,722.039 h -16.29 l -315.8,1020.011" />
+      <path class="fill" style="fill:none;stroke:#4f4c4c;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="M 1338.75,0 V 2406.28" />
+      <path class="fill" stroke-width="3" d="M1348.75 0 v600 400" />
+    </g>
+  </g>
+</svg>

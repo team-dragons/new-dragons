@@ -1,0 +1,6 @@
+.DS_Store
+_public
+package-lock.json
+node_modules
+npm-debug.log
+_dev/stylesheets/global.css
