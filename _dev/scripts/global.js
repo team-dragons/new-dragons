@@ -199,12 +199,12 @@ theDragons.core.extend('hamburgerMenu', function () {
       $('#nav-icon').click(function () {
         $(this).toggleClass('open');        
         if ($('#nav-icon').hasClass('open')) {
-          $('html, body').css({
+          $('html').css({
             overflow: 'hidden',
             height: '100%'
           });
         } else {
-          $('html, body').css({
+          $('html').css({
             overflow: 'auto',
             height: 'auto'
           });
@@ -286,7 +286,8 @@ theDragons.core.extend('scrollHideNav', function () {
   return {
     initialize: function () {
       var self = this;
-      if ($.find('.scroll-hide-nav').length > 0) {
+      const windowWidth = $(document).width();      
+      if ($.find('.scroll-hide-nav').length > 0 && windowWidth >= 640) {
         $scrollHideNav = $('.scroll-hide-nav');
         $scrollHideNav.css({
           transition: 'all 0.5s ease-in 0s',
