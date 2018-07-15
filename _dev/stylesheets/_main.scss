@@ -1,5 +1,5 @@
 .background-full-separator{
-  background-color:#ddd;
+  background-color:#FFFDE7;
 }
 
 // Home
@@ -27,3 +27,28 @@ p.question {
 // Accommodations
 
 // RSVP
+form[name="rsvp"] {
+  padding-bottom:25px;
+  .row {padding-bottom:10px;overflow:hidden}
+  textarea{resize:none;height:75px;}
+  input[type="text"].error,
+  input[type="number"].error,
+  select.error {border:1px solid red}
+  .error-message {display:none}
+  .error-message.active {display:block;color:red}
+  label.screen-reader-only {overflow:hidden;position:absolute;width:1px;height:1px;border:0;clip:rect(0,0,0,0);margin:-1px;padding:0;top:-500px}
+  input[type="text"],
+  input[type="number"],
+  select {margin-bottom:0;}
+  input[type="text"]::-webkit-input-placeholder,
+  input[type="number"]::-webkit-input-placeholder,
+  select,
+  textarea {color:#444}
+  input[type="text"],
+  input[type="number"] {width:100%;padding:7px 8px;box-sizing:border-box;border:1px solid #cacaca;border-radius:3px;background-color:#fff;line-height:1.4em}
+  input[type="checkbox"] + label {padding-left:2%}
+  input[type="radio"] + label {padding-left:2%}
+  select {width:100%;box-sizing:border-box;border:1px solid #cacaca;border-radius:3px;background-color:#fff;overflow-wrap:initial;box-shadow: inset 0 1px 2px rgba(10,10,10,.1);}
+  button {width:100%;text-align:center;border-radius:1.25rem;color:#444;padding:0.75rem 0;background-color:#c2dcc2;transition: all 0.25s linear 0s;font-weight:bold;}
+  button:hover {background-color:#70b48c;cursor:pointer;color:#FFF;transition: all 0.125s linear 0s;}  
+}
