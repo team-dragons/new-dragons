@@ -32,7 +32,7 @@ div.logo-menu-container {
         padding: 15px 5px;
         a {
           text-decoration: none;
-          color: #444;
+          color: $primaryDarkColor;
           position: relative;
           padding: 0 1.25rem;
           font-size: 2rem;
@@ -56,11 +56,11 @@ div.logo-menu-container {
           }
           &:before {
             left: calc(50%);
-            background-color: #444;
+            background-color: $primaryDarkColor;
           }
           &:after {
             right: calc(50%);
-            background-color: #444;
+            background-color: $primaryDarkColor;
           }
         }
         &:hover {
@@ -89,8 +89,8 @@ div.logo-menu-container {
         width:75px;
         height:51px;
         .svg-fill{
-          fill: #444;
-          stroke: #444;
+          fill: $primaryDarkColor;
+          stroke: $primaryDarkColor;
         }
       }
     }
@@ -109,38 +109,38 @@ div.logo-menu-container {
   div.logo-menu-container {
     &.scroll-hide-nav {
       ul li a {
-        color: white;
+        color: $primaryLightColor;
         font-size: 1.35rem;
         &:before {
-          background-color: white;
+          background-color: $primaryLightColor;
         }
         &:after {
-          background-color: white;
+          background-color: $primaryLightColor;
         }
       }
       .logo svg.monogram .svg-fill {
-        fill: white;
-        stroke: white;
+        fill: $primaryLightColor;
+        stroke: $primaryLightColor;
       }
     }
     &.scroll-reveal-nav-sticky {
-      background-color:white;
+      background-color:$primaryLightColor;
       z-index:2;
-      transform: translate(0,-75px);
+      transform: translate(0,-86px);
       display: block;   
       ul li a {
-        color: #444;
+        color: $primaryDarkColor;
         font-size: 1.35rem;
         &:before {
-          background-color: #444;
+          background-color: $primaryDarkColor;
         }
         &:after {
-          background-color: #444;
+          background-color: $primaryDarkColor;
         }
       }
       .logo svg.monogram .svg-fill {
-        fill: #444;
-        stroke: #444;
+        fill: $primaryDarkColor;
+        stroke: $primaryDarkColor;
       }
     }
   }

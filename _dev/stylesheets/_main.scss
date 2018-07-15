@@ -27,18 +27,34 @@ p.question {
 // Accommodations
 
 // RSVP
+.rsvp.wrapper{
+  @media (min-width: 64rem) {
+    max-width:900px;
+  }
+}
 form[name="rsvp"] {
   width:100%;
-  padding-bottom:10rem;
-  .row {padding-bottom:2rem;}
+  padding:10rem 0;
+  .row {
+    padding-bottom:0;
+    @media (min-width: 64rem) {
+      padding-bottom:2rem;
+    } 
+  }
+  .row .column {
+    padding-bottom:1.5rem;
+    @media (min-width: 64rem) {
+      padding-bottom:0;
+    } 
+  }
   textarea{resize:none;height:12rem;}
 
   input[type="text"].error,
   input[type="number"].error,
-  select.error {border:1px solid red}
+  select.error {border:1px solid $errorColor}
 
   .error-message {display:none}
-  .error-message.active {display:block;color:red;font-size:1.4rem;}
+  .error-message.active {display:block;color:$errorColor;font-size:1.4rem;}
 
   label.screen-reader-only {overflow:hidden;position:absolute;width:1px;height:1px;border:0;clip:rect(0,0,0,0);margin:-1px;padding:0;top:-500px}
 
@@ -47,26 +63,26 @@ form[name="rsvp"] {
   select {margin-bottom:0;}
 
   textarea,input,select {
-    color:#7c7c7c;
-    background-color:#f3f3f3;
-    box-sizing:border-box;
-    border:1px solid #cacaca;
-    border-radius:3px;
-    padding:3px 8px;
+    color:$primaryDarkColor;
+    background-color:#f6f6f6;
+    border:1px solid $primaryDarkColor;
+    padding:1rem 2rem;
     line-height:2.5rem;
     font-size:1.4rem;
   }
 
   input[type="text"]::-webkit-input-placeholder,
   input[type="number"]::-webkit-input-placeholder,
-  input[type="text"],
-  input[type="number"] {width:100%;box-sizing:border-box;color:#7c7c7c;}
+  select,
+  textarea {
+    color:#7c7c7c;
+  }
 
-  input[type="checkbox"] + label {padding-left:2%}
-  input[type="radio"] + label {padding-left:2%}
-  select {width:100%;box-sizing:border-box;overflow-wrap:initial;box-shadow: inset 0 1px 2px rgba(10,10,10,.1);color:#7c7c7c;background-position:right 1rem center;}
-  button {width:100%;text-align:center;border-radius:1.25rem;color:#444;padding:0.75rem 0;background-color:#c2dcc2;transition: all 0.25s linear 0s;font-weight:bold;}
-  button:hover {background-color:#70b48c;cursor:pointer;color:#FFF;transition: all 0.125s linear 0s;}  
+  select {
+    width:100%;
+    overflow-wrap:initial;
+    box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+  }
 
   .attend-ceremony-reception {
     display:none;
@@ -75,19 +91,32 @@ form[name="rsvp"] {
     display:none;
     height: 7rem;
   }
+  .guest-heading-container {
+    text-align: left;
+    @media (min-width: 64rem) {
+      text-align: right;
+    }   
+  }
   .guest-heading{
     font-family: $secondaryFont;  
     padding-left: 0.625rem;
     padding-right: 0.625rem;
-    @media (min-width: 40rem) {
+    @media (min-width: 64rem) {
       padding-left: 0.9375rem;
       padding-right:0.9375rem
-    }    
+    }
   }
   .guest1 {
-    padding-bottom:2rem;
+    padding-bottom:3rem;
+    @media (min-width: 64rem) {
+      padding-bottom:2rem;
+    } 
   }
   .high-chairs {
     display:none;
+  }
+  button.primary {
+    display:block;
+    margin:0 auto;
   }
 }
