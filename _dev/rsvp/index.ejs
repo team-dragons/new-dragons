@@ -31,7 +31,6 @@
               </select>
               <span class="attendance error-message">Please confirm your attendance</span>
               <input type="hidden" name="guest1Meal" value="adult">
-              <input type="hidden" name="guest1HighChair" value="No">
             </div>
 
             <div class="not-attend text-center">
@@ -62,9 +61,6 @@
                       <option value="none">No meal</option>
                     </select>
                     <span class="guest2Meal error-message">Please confirm the meal type</span>
-                    <div class="small-12 column hide">
-                      <input type="checkmark" name="guest2HighChair" value="Yes">
-                    </div>
                   </div>
                 </div>
               </div>
@@ -89,9 +85,6 @@
                       <option value="none">No meal</option>
                     </select>
                     <span class="guest3Meal error-message">Please confirm the meal type</span>
-                    <div class="small-12 column hide">
-                      <input type="checkmark" name="guest3HighChair" value="Yes">
-                    </div>
                   </div>
                 </div>
               </div>
@@ -116,9 +109,6 @@
                       <option value="none">No meal</option>
                     </select>
                     <span class="guest4Meal error-message">Please confirm the meal type</span>
-                    <div class="small-12 column hide">
-                      <input type="checkmark" name="guest4HighChair" value="Yes">
-                    </div>
                   </div>
                 </div>
               </div>
@@ -143,15 +133,23 @@
                       <option value="none">No meal</option>
                     </select>
                     <span class="guest5Meal error-message">Please confirm the meal type</span>
-                    <div class="small-12 column hide">
-                      <input type="checkmark" name="guest5HighChair" value="Yes">
-                    </div>
                   </div>
+                </div>
+              </div>
+              <div class="row high-chairs">
+                <div class="small-12 column">
+                  <select name="highchairs">
+                    <option value="None">Number of high chairs needed</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
                 </div>
               </div>
               <div class="row">
                 <div class="small-12 column">
-                  <label for="guests-dietary-restrictions" class="screen-reader-only">Dietary resections</label>
+                  <label for="guests-dietary-restrictions" class="screen-reader-only">Dietary restrictions</label>
                   <input type="text" placeholder="Please indicate any dietary restrictions for you and your guests" name="guestsDietaryRestrictions"
                     id="guests-dietary-restrictions" value="">
                 </div>

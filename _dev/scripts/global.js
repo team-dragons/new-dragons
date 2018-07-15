@@ -236,11 +236,8 @@ theDragons.core.extend('formRSVP', function () {
         }
       });
       $('.meal').on("change", function (ev) {
-        if (this.value === "children" || this.value === "children") {
-          this
-        } else if (this.value === "not-attend") {
-          $(".attend-ceremony-reception").hide();
-          $(".not-attend").fadeIn();
+        if (this.value === "children" || this.value === "none") {
+          $(".high-chairs").fadeIn();
         }
       });
     },

@@ -28,16 +28,17 @@ p.question {
 
 // RSVP
 form[name="rsvp"] {
+  width:100%;
   padding-bottom:10rem;
   .row {padding-bottom:2rem;}
-  textarea{resize:none;height:75px;}
+  textarea{resize:none;height:12rem;}
 
   input[type="text"].error,
   input[type="number"].error,
   select.error {border:1px solid red}
 
   .error-message {display:none}
-  .error-message.active {display:block;color:red}
+  .error-message.active {display:block;color:red;font-size:1.4rem;}
 
   label.screen-reader-only {overflow:hidden;position:absolute;width:1px;height:1px;border:0;clip:rect(0,0,0,0);margin:-1px;padding:0;top:-500px}
 
@@ -86,7 +87,7 @@ form[name="rsvp"] {
   .guest1 {
     padding-bottom:2rem;
   }
-  .guest {
-    padding-bottom:0rem;
+  .high-chairs {
+    display:none;
   }
 }
