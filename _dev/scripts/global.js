@@ -180,6 +180,82 @@ theDragons.core.extend('formSaveOurDate', function () {
   }
 });
 
+theDragons.core.extend('formRSVP', function () {
+  let errormessage = "";
+  return {
+    ready: function () {
+      if (window.location.pathname === "/rsvp/") {
+        const self = this;
+        self.addEventListeners();
+        self.submitListener();
+      }
+    },
+    //validateForm(): returns true when all fields are validated successfuly
+    validateForm: function () {
+      const self = this;
+      errormessage = "";
+      self.displayStatus("guest1FirstName", "alphaNumeric");
+      self.displayStatus("guest1LastName", "alphaNumeric");
+      self.displayStatus("attendance", "dropDown");
+      if ($('select[name=attendance]').val() === "attend-ceremony-reception") {
+        self.displayStatus("guest2FirstName", "alphaNumeric");
+        self.displayStatus("guest2LastName", "alphaNumeric");
+        self.displayStatus("guest2Meal", "dropDown");
+
+      }
+      // self.displayStatus("address", "alphaNumeric");
+      // self.displayStatus("city", "alphaNumeric");
+      // self.displayStatus("province", "alphaNumeric");
+      // self.displayStatus("postalCode", "postalCode");
+      if (errormessage != "") {
+        return false;
+      }
+      return true;
+    },
+    //displayStatus(): highlights/hides the border of the input that has an issue + adds/hides the error message; this function is customizable
+    //@param {string} elementName is the name of the DOM object being tested - used here for 'error-message'  
+    //@param {string} type is the character set to be validated again (e.g. alphaNumeric, numeric, email, postalCode, dropDown, checkBox, radioButton)
+    displayStatus: function (elementName, type) {
+      if (theDragons.formValidation.checkField(elementName, type)) {
+        $("." + elementName + ".error-message").addClass("active");
+        errormessage += elementName + " ";
+      } else {
+        $("." + elementName + ".error-message.active").removeClass("active");
+      }
+    },
+    addEventListeners: function () {
+      const self = this;
+      $('select[name=attendance]').on("change",function (ev) {
+        $(".attendance.error-message").removeClass("active");
+        if (this.value === "attend-ceremony-reception") {
+          $(".attend-ceremony-reception").fadeIn();
+          $(".not-attend").hide();
+        } else if (this.value === "not-attend") {
+          $(".attend-ceremony-reception").hide();
+          $(".not-attend").fadeIn();
+        }
+      });
+      $('.meal').on("change", function (ev) {
+        if (this.value === "children" || this.value === "children") {
+          this
+        } else if (this.value === "not-attend") {
+          $(".attend-ceremony-reception").hide();
+          $(".not-attend").fadeIn();
+        }
+      });
+    },
+    submitListener: function () {
+      const self = this;
+      $('form[name=rsvp]').submit(function (ev) {
+        ev.preventDefault(); // to stop the form from submitting
+        if (self.validateForm()) { // if all the validations succeeded
+          this.submit();
+        }
+      });
+    }
+  }
+});
+
 // Open/Close Hamburger menu and Disable/Enable scroll
 theDragons.core.extend('hamburgerMenu', function () {
   return {
