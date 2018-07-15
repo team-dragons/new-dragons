@@ -1,5 +1,9 @@
 .DS_Store
 _public
+_dist
+_dist/
+_dist/*
+_dist/**/*
 package-lock.json
 node_modules
 npm-debug.log
