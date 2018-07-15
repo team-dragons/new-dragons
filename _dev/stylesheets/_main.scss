@@ -26,7 +26,24 @@ p.question {
 }
 
 // Accommodations
+section.accommodations {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 50px 0;   
+}
 
+p.hotel {
+  font-weight: bold;
+}
+
+section.accommodations img {
+  width: 350px;
+  height: 175px;
+  display: block;
+  margin: 0 auto;
+}
 // RSVP
 form[name="rsvp"] {
   padding-bottom:25px;
