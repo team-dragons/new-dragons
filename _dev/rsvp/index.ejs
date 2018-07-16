@@ -3,8 +3,8 @@
     <main>
       <header class="home rsvp">
         <div class="wrapper align-self-middle">
-          <h1>RSVP</h1>
-          <h2>Please RSVP by August 10, 2018</h2>
+          <h1 class="h1 uppercase">RSVP</h1>
+          <h2 class="h3">Please RSVP by August 10, 2018</h2>
         </div>
       </header>
       <div class="rsvp wrapper">
@@ -139,10 +139,10 @@
                 <div class="small-12 column">
                   <select name="highchairs">
                     <option value="None">Number of high chairs needed</option>
-                    <option value="0">Number of high chairs needed: 0</option>
-                    <option value="1">Number of high chairs needed: 1</option>
-                    <option value="2">Number of high chairs needed: 2</option>
-                    <option value="3">Number of high chairs needed: 3</option>
+                    <option value="High chairs: 0">Number of high chairs needed: 0</option>
+                    <option value="High chairs: 1">Number of high chairs needed: 1</option>
+                    <option value="High chairs: 2">Number of high chairs needed: 2</option>
+                    <option value="High chairs: 3">Number of high chairs needed: 3</option>
                   </select>
                 </div>
               </div>
@@ -157,7 +157,7 @@
             <div class="row">
               <div class="small-12 column">
                 <label for="message" class="screen-reader-only">Message</label>
-                <textarea id="message" name="message" onfocus="if(this.value == 'Message') { this.value = ''; }" onblur="if (this.value == '') { this.value='Message'; }">Message</textarea>
+                <textarea id="message" name="optionalMessage" onfocus="if(this.value == 'Message') { this.value = ''; }" onblur="if (this.value == '') { this.value='Message'; }">Message</textarea>
               </div>
             </div>
 
