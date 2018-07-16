@@ -1,43 +1,35 @@
 <%- partial(`_layouts/_default.head`, { title : "Zena Jun &amp; Warren Shea Wedding" }) %>
 <%- partial(`_layouts/_default.header`) %>
-        <main>
-            <header class="home">
-                <div class="wrapper align-self-middle">
-                    <h1 class="h1 uppercase"><i>It's about time!</i></h1>
-                    <h3 class="h3">Please let us know if you can attend our celebration</h3>
-                    <br>
-                    <button href="/rsvp/" class="reverse">RSVP</button>
-                </div>
-            </header>
-            <div>
-                <section class="wrapper home">
-                    <p class="scroll-reveal">Finally!  Zena and Warren are getting married!</p>
-                    <p class="scroll-reveal">We are overjoyed by the love and support from you, our family and friends.</p>
-                    <p class="scroll-reveal">We look forward to celebrating our special day with you!</p>                   
-                </section>
-            </div>
-  
-            <div class="background-full-separator">
-                <section class="wrapper home">
-                    <h2 class="scroll-reveal date">Saturday September 15<sup>th</sup>, 2018</h2>
-                    <p class="scroll-reveal address">Miller Lash House</p>
-                    <p class="scroll-reveal address">130 Old Kingston Road</p>
-                    <p class="scroll-reveal address">Scarborough, ON M1E 2J5</p>
-                    <p class="scroll-reveal">
-                        <a class="directions" href="https://www.google.com/maps?ll=43.779963,-79.185377&z=16&t=m&hl=en-CA&gl=CA&mapclient=embed&daddr=Miller+Lash+House+130+Old+Kingston+Rd+Scarborough,+ON+M1E+3J5@43.7795312,-79.1846148">Directions</a>
-                    </p>
-                    <div id="map" class="map">            
-                    </div>
-                </section>
-            </div>
-            <div>
-                <section class="wrapper home">
-                    <h2 class="scroll-reveal">Please let us know if you can make it!</h2>
-                    <p class="scroll-reveal"><a class="rsvp" href="/rsvp/">RSVP</a>
-                    </p>
-                   
-                </section>
-            </div>
-        </main>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQpmneAk51CgIrjXPEj61yvXfiFSwkiwc" type="text/javascript"></script>
+    <main class="home">
+      <header>
+        <div class="wrapper align-self-middle">
+          <h1 class="h1 uppercase scroll-reveal">It's about time!</h1>
+          <button href="/rsvp/" class="scroll-reveal small-margin-top--3">RSVP</button>
+        </div>
+      </header>
+      <div>
+        <section class="wrapper section-padding">
+          <p class="h2 scroll-reveal secondaryFont">Zena and Warren are getting married!</p>
+          <p class="h3 scroll-reveal">We are overjoyed by the love and support from you, our family and friends.</p>
+          <p class="h3 scroll-reveal">We look forward to celebrating our special day with you!</p>           
+        </section>
+      </div>
+      <div class="background-full-separator">
+        <section class="wrapper section-padding">
+          <h2 class="h2 scroll-reveal secondaryFont date small-margin-bottom--3">Saturday September 15<sup>th</sup>, 2018</h2>
+          <p class="h3 scroll-reveal address small-margin--1">Miller Lash House</p>
+          <p class="h3 scroll-reveal address small-margin--1">130 Old Kingston Road</p>
+          <p class="h3 scroll-reveal address small-margin--1">Scarborough, ON M1E 2J5</p>
+          <button class="directions reverse small-margin-top--2 scroll-reveal" href="https://www.google.com/maps?ll=43.779963,-79.185377&z=16&t=m&hl=en-CA&gl=CA&mapclient=embed&daddr=Miller+Lash+House+130+Old+Kingston+Rd+Scarborough,+ON+M1E+3J5@43.7795312,-79.1846148">Directions</button>
+          <div id="map" class="map scroll-reveal small-margin-top--4"></div>
+        </section>
+      </div>
+      <div>
+        <section class="wrapper section-padding">
+          <h2 class="h2 secondaryFont scroll-reveal small-margin-bottom--3">Please let us know if you can make it!</h2>
+          <p class="scroll-reveal"><button href="/rsvp/">RSVP</button></p>
+        </section>
+      </div>
+    </main>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQpmneAk51CgIrjXPEj61yvXfiFSwkiwc" type="text/javascript"></script>
 <%- partial(`_layouts/_default.footer`) %>

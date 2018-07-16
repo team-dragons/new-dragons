@@ -55,6 +55,93 @@ const theDragons = (function () {
   };
 })();
 
+/*
+* Allows the height of various divs to be the same by taking the biggest height and applying it to all items.
+* This will occur for any item regardless of viewport. To affect medium size and up, see Options.
+*
+* How to use this:
+* Add 'data-equalize-height="(key)"' to any item where key is a value you input yourself, to link the items.
+* All the items with the same 'key' will have the same height
+*
+* Options:
+* If you only want this to occur on medium size up, add 'data-equalize-medium-up' to the item as well
+*/
+theDragons.core.extend('equalizeHeights', function () {
+  'use strict';
+
+  let _dataEqualHeightArray = [];
+  let _highest = 0;
+  let _heights = [];
+
+  /*
+   * Sorts items in array from smallest to largest
+   */
+  let sortNumber = function (a, b) {
+    return a - b;
+  };
+
+  /*
+   * For each "key", determine the largest height and apply to all items with that key
+   */
+  let maxHeight = function () {
+    $.each(_dataEqualHeightArray, function (index, value) {
+      _highest = 0;
+      _heights = [];
+      $('[data-equalize-height=' + value + ']').css('height', 'auto');
+      $('[data-equalize-height=' + value + ']').each(function () {
+        /* get the height including the padding of an item */
+        _heights.push($(this).outerHeight());
+      });
+      _heights = _heights.sort(sortNumber).reverse();
+      _highest = _heights[0];
+      $('[data-equalize-height=' + value + ']').css('height', _highest);
+    });
+  };
+
+  return {
+    initialize: function () {
+      const self = this;
+      self.getDataEqualHeightItems();
+      self.resizeListener();
+    },
+    /*
+     * Checks all the items that need to equalize height, and add keys to array
+     */
+    getDataEqualHeightItems: function () {
+      $('[data-equalize-height]').each(function () {
+        let newItem = $(this).data('equalize-height');
+        if (_dataEqualHeightArray.indexOf(newItem) < 0) {
+          _dataEqualHeightArray.push(newItem);
+        }
+      });
+    },
+    /*
+     * Re-evaluate the equalizing of the height when the page loads or is resized
+     */
+    resizeListener: function () {
+      const self = this;
+      $(window).on('load resize', function (event) {
+        self.forceResize();
+      });
+    },
+    /*
+     * Check for any new items to equalize, and then equalize them
+     * Do not equalize height for small size if the item contains [data-equalize-medium-up] data attribute
+     */
+    forceResize: function () {
+      const self = this;
+      self.getDataEqualHeightItems();
+      maxHeight();
+      if (theDragons.core.getViewportWidth() < 640) {
+        $('[data-equalize-height][data-equalize-medium-up]').css('height', 'auto');
+      }
+      if (theDragons.core.getViewportWidth() >= 640) {
+        $('[data-equalize-height][data-equalize-small-only]').css('height', 'auto');
+      }
+    }
+  };
+});
+
 theDragons.core.extend('formValidation', function () {
   'use strict';
   return {
@@ -135,11 +222,6 @@ theDragons.core.extend('formSaveOurDate', function () {
     validateForm: function () {
       const self = this;
       errormessage = "";
-      // self.displayStatus("name", "alphaNumeric");
-      // self.displayStatus("address", "alphaNumeric");
-      // self.displayStatus("city", "alphaNumeric");
-      // self.displayStatus("province", "alphaNumeric");
-      // self.displayStatus("postalCode", "postalCode");
       if (errormessage != "") {
         return false;
       }
@@ -309,8 +391,10 @@ theDragons.core.extend('loadMap', function() {
   
   return {
     initialize: function () {
-      const self = this;
-      self.loadMap();
+      if (window.location.pathname === "/" || window.location.pathname === "/faqs/") {
+        const self = this;
+        self.loadMap();
+      }
     },
     loadMap: function (lat = 43.7799664, lng = -79.1875656) {
       const mapOptions = {
@@ -439,6 +523,7 @@ theDragons.core.extend('loadMap', function() {
         map: app.map,
         icon: `/images/pin.png`
       });
+<<<<<<< HEAD
       
   
         const infoWindow = new google.maps.InfoWindow();
@@ -450,6 +535,16 @@ theDragons.core.extend('loadMap', function() {
           infoWindow.open(app.map, millerLashHouse);
         });
      
+=======
+
+      const infoWindow = new google.maps.InfoWindow();
+      google.maps.event.addListener(millerLashHouse, 'click', function () {
+        infoWindow.setContent(`Miller Lash House<br><a target="_blank" href="https://maps.google.com/maps?ll=43.779963,-79.185377&amp;z=16&amp;t=m&amp;hl=en-CA&amp;gl=CA&amp;mapclient=embed&amp;daddr=Miller%20Lash%20House%20130%20Old%20Kingston%20Rd%20Scarborough%2C%20ON%20M1E%203J5@43.7795312,-79.1846148">Get Directions</a>  
+        `);
+        infoWindow.open(app.map, millerLashHouse);
+      });
+    
+>>>>>>> 0d3ccdbd9bc960c2dd82d5ab115a2984617a1319
     }
   }
 });
@@ -458,7 +553,7 @@ theDragons.core.extend('scrollReveal', function () {
   $w = $(window);
   return {
     initialize: function () {
-      var self = this;
+      const self = this;
       if ($.find('.scroll-reveal').length > 0) {
         $('.scroll-reveal').each(function () {
           $scrollReveal = $(this);
@@ -471,24 +566,30 @@ theDragons.core.extend('scrollReveal', function () {
       }
     },
     showAndHideScrollReveal: function ($scrollReveal) {
+      let offset = 0;     
+      if (theDragons.core.getViewportWidth() <= 640) {
+        offset = 0;
+      } else {
+        offset = 120;
+      }
       //console.log(`${$w.scrollTop()} > ${$scrollReveal.offset().top} - ${parseInt(theDragons.core.getViewportHeight())}`);
-      if ((($w.scrollTop() < ($scrollReveal.offset().top - 75))) && ($w.scrollTop() > ($scrollReveal.offset().top - parseInt(theDragons.core.getViewportHeight() - 75)))) {
+      if ((($w.scrollTop() < ($scrollReveal.offset().top - offset))) && ($w.scrollTop() > ($scrollReveal.offset().top - parseInt(theDragons.core.getViewportHeight() - offset-30)))) {
         $scrollReveal.css({
-          transition: 'all 1s ease-in 0s',
+          transition: 'all 0.25s ease-in 0s',
           opacity: 1,
           transform: 'translate(0,0)'
         });
       } else {
         //console.log(`${$w.scrollTop()} > ${$scrollReveal.offset().top} - ${parseInt(theDragons.core.getViewportHeight())}`);
         $scrollReveal.css({
-          transition: 'all 1s ease-in 0s',
+          transition: 'all 0.25s ease-in 0s',
           opacity: 0,
           transform: 'translate(0,-15px)'
         });
       }
     },
     scrollAndResizeListener: function ($scrollReveal) {
-      var self = this;
+      const self = this;
       $w.scroll(function () {
         self.showAndHideScrollReveal($scrollReveal);
       });
@@ -503,7 +604,7 @@ theDragons.core.extend('scrollHideNav', function () {
   $w = $(window);
   return {
     initialize: function () {
-      var self = this;
+      const self = this;
       const windowWidth = $(document).width();
       if ($.find('.scroll-hide-nav').length > 0 && windowWidth >= 640) {
         $scrollHideNav = $('.scroll-hide-nav');
@@ -529,7 +630,7 @@ theDragons.core.extend('scrollHideNav', function () {
       }
     },
     scrollAndResizeListener: function ($scrollHideNav) {
-      var self = this;
+      const self = this;
       $w.scroll(function () {
         self.showAndHideScrollReveal($scrollHideNav);
       });
@@ -544,7 +645,7 @@ theDragons.core.extend('scrollRevealSticky', function () {
   $w = $(window);
   return {
     initialize: function () {
-      var self = this;
+      const self = this;
       if ($.find('.scroll-reveal-nav-sticky').length > 0) {
         $scrollRevealNavSticky = $('.scroll-reveal-nav-sticky');
         $scrollRevealNavSticky.css({
@@ -560,7 +661,7 @@ theDragons.core.extend('scrollRevealSticky', function () {
         $scrollRevealNavSticky.css({
           transition: 'all 0.5s ease-in 0s',
           opacity: 0,
-          transform: 'translate(0,-86px)'
+          transform: 'translate(0,-90px)'
         });
       } else {
         $scrollRevealNavSticky.css({
@@ -571,7 +672,7 @@ theDragons.core.extend('scrollRevealSticky', function () {
       }
     },
     scrollAndResizeListener: function ($scrollRevealNavSticky) {
-      var self = this;
+      const self = this;
       $w.scroll(function () {
         self.showAndHideScrollReveal($scrollRevealNavSticky);
       });
