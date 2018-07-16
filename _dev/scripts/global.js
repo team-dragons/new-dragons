@@ -279,11 +279,6 @@ theDragons.core.extend('formRSVP', function () {
       self.displayStatus("guest1FirstName", "alphaNumeric");
       self.displayStatus("guest1LastName", "alphaNumeric");
       self.displayStatus("attendance", "dropDown");
-      if ($('select[name=attendance]').val() === "attend-ceremony-reception") {
-        self.displayStatus("guest2FirstName", "alphaNumeric");
-        self.displayStatus("guest2LastName", "alphaNumeric");
-        self.displayStatus("guest2Meal", "dropDown");
-      }
       if (errormessage != "") {
         return false;
       }
@@ -523,19 +518,6 @@ theDragons.core.extend('loadMap', function() {
         map: app.map,
         icon: `/images/pin.png`
       });
-<<<<<<< HEAD
-      
-  
-        const infoWindow = new google.maps.InfoWindow();
-        google.maps.event.addListener(millerLashHouse, 'click', function () {
-          infoWindow.setContent(`Miller Lash House
-            <br />
-            <a class="map-directions" target="_blank" href="https://maps.google.com/maps?ll=43.779963,-79.185377&amp;z=16&amp;t=m&amp;hl=en-CA&amp;gl=CA&amp;mapclient=embed&amp;daddr=Miller%20Lash%20House%20130%20Old%20Kingston%20Rd%20Scarborough%2C%20ON%20M1E%203J5@43.7795312,-79.1846148">Get Directions</a>  
-          `);
-          infoWindow.open(app.map, millerLashHouse);
-        });
-     
-=======
 
       const infoWindow = new google.maps.InfoWindow();
       google.maps.event.addListener(millerLashHouse, 'click', function () {
@@ -544,7 +526,6 @@ theDragons.core.extend('loadMap', function() {
         infoWindow.open(app.map, millerLashHouse);
       });
     
->>>>>>> 0d3ccdbd9bc960c2dd82d5ab115a2984617a1319
     }
   }
 });
