@@ -309,6 +309,156 @@ theDragons.core.extend('smoothScroll', function () {
   }
 });
 
+theDragons.core.extend('loadMap', function() {
+  const app = {};
+  
+  return {
+    initialize: function () {
+      const self = this;
+      self.loadMap();
+    },
+    loadMap: function (lat = 43.7799664, lng = -79.1875656) {
+      const mapOptions = {
+        center: {
+          lat,
+          lng
+        },
+        zoom: 13,
+        styles: [
+          {
+            "featureType": "landscape",
+            "elementType": "all",
+            "stylers": [{
+                "hue": "#FFBB00"
+              },
+              {
+                "saturation": 43.400000000000006
+              },
+              {
+                "lightness": 37.599999999999994
+              },
+              {
+                "gamma": 1
+              }
+            ]
+          },
+          {
+            "featureType": "poi",
+            "elementType": "all",
+            "stylers": [{
+                "hue": "#00FF6A"
+              },
+              {
+                "saturation": -1.0989010989011234
+              },
+              {
+                "lightness": 11.200000000000017
+              },
+              {
+                "gamma": 1
+              }
+            ]
+          },
+          {
+            "featureType": "poi",
+            "elementType": "labels.icon",
+            "stylers": [{
+              "visibility": "off"
+            }]
+          },
+          {
+            "featureType": "road.highway",
+            "elementType": "all",
+            "stylers": [{
+                "hue": "#FFC200"
+              },
+              {
+                "saturation": -61.8
+              },
+              {
+                "lightness": 45.599999999999994
+              },
+              {
+                "gamma": 1
+              }
+            ]
+          },
+          {
+            "featureType": "road.arterial",
+            "elementType": "all",
+            "stylers": [{
+                "hue": "#FF0300"
+              },
+              {
+                "saturation": -100
+              },
+              {
+                "lightness": 51.19999999999999
+              },
+              {
+                "gamma": 1
+              }
+            ]
+          },
+          {
+            "featureType": "road.local",
+            "elementType": "all",
+            "stylers": [{
+                "hue": "#FF0300"
+              },
+              {
+                "saturation": -100
+              },
+              {
+                "lightness": 52
+              },
+              {
+                "gamma": 1
+              }
+            ]
+          },
+          {
+            "featureType": "water",
+            "elementType": "all",
+            "stylers": [{
+                "hue": "#0078FF"
+              },
+              {
+                "saturation": -13.200000000000003
+              },
+              {
+                "lightness": 2.4000000000000057
+              },
+              {
+                "gamma": 1
+              }
+            ]
+          }
+        ]
+      }
+
+      const mapDiv = $('.map')[0];
+      app.map = new google.maps.Map(mapDiv, mapOptions);
+      const millerLashHouse = new google.maps.Marker({
+        position: new google.maps.LatLng(43.779872, -79.185280),
+        map: app.map,
+        icon: `/images/pin.png`
+      });
+      
+  
+        const infoWindow = new google.maps.InfoWindow();
+        google.maps.event.addListener(millerLashHouse, 'click', function () {
+          infoWindow.setContent(`Miller Lash House
+            <br />
+            <a target="_blank" href="https://maps.google.com/maps?ll=43.779963,-79.185377&amp;z=16&amp;t=m&amp;hl=en-CA&amp;gl=CA&amp;mapclient=embed&amp;daddr=Miller%20Lash%20House%20130%20Old%20Kingston%20Rd%20Scarborough%2C%20ON%20M1E%203J5@43.7795312,-79.1846148">Get Directions</a>  
+          `);
+          infoWindow.open(app.map, millerLashHouse);
+        });
+     
+    }
+  }
+});
+
 theDragons.core.extend('scrollReveal', function () {
   $w = $(window);
   return {
