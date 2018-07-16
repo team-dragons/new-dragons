@@ -3,6 +3,40 @@
   color:$primaryLightColor;
 }
 // Home
+section.home {
+  padding: 5rem 0;
+  text-align: center;
+  font-size: 2rem;
+  @media (min-width: 40rem) {
+    padding: 10rem;
+  }
+}
+
+.home p.address {
+  margin:0.5rem;
+}
+
+a.rsvp, a.directions {
+  display: inline-block;
+  margin: 2rem;
+  padding: 1rem 3rem;
+  border: 1px solid #444;
+  transition: all 0.25s linear 0s;
+  text-decoration: none;
+  color: #444;
+  &:hover {
+    color: #fff;
+    border: 1px solid #444;
+    background-color: #444;
+    cursor: pointer;
+  }
+}
+
+a.directions {
+  @media (min-width: 40rem) {
+    display: none;
+  }
+}
 
 // Schedule
 .wrapper.schedule{
@@ -16,7 +50,10 @@
 // FAQs
 section.faqs {
   text-align: center;
-  padding: 3rem 150px;
+  padding: 5rem 0;
+  @media (min-width: 1100px) {
+    padding: 10rem;
+  }
 }
 
 p.question {
@@ -24,6 +61,8 @@ p.question {
   font-weight: bold;
   font-family: $secondaryFont;
 }
+
+
 
 // Accommodations
 section.accommodations {
