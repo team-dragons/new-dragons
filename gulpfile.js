@@ -28,7 +28,7 @@ gulp.task('css', () => {
     .pipe(gulp.dest('./_dev/stylesheets'))
     .pipe(gulpif(env === 'preview', reload({ stream: true })))
     .pipe(gulpif(env === 'prod', cleanCSS()))
-    .pipe(gulp.dest('./_public/stylesheets'))
+    .pipe(gulp.dest('./_dist/stylesheets'))
 });
 
 gulp.task('js', () => {
@@ -36,10 +36,10 @@ gulp.task('js', () => {
     .pipe(babel({
       presets: ['env']
     }))
-    .pipe(gulp.dest('./_public/scripts'))
+    .pipe(gulp.dest('./_dist/scripts'))
     .pipe(gulpif(env === 'preview', reload({ stream: true })))
     .pipe(gulpif(env === 'prod', uglify()))
-    .pipe(gulp.dest('./_public/scripts'))
+    .pipe(gulp.dest('./_dist/scripts'))
 });
 
 gulp.task('html', function () {
@@ -48,8 +48,8 @@ gulp.task('html', function () {
       './_dev/**/*.ejs',   //exclude .ejs files
       '!node_modules',    //exclude node_modules
       '!node_modules/**', //exclude node_modules
-      '!_public',           //exclude node_modules
-      '!_public/**'         //exclude node_modules
+      '!_dist',           //exclude node_modules
+      '!_dist/**'         //exclude node_modules
     ])
     .pipe(gulpif(env === 'preview', reload({ stream: true })))
 });
@@ -75,19 +75,19 @@ gulp.task('serve', function (done) {
 // gulp.task('build', function (done) {
 //   return gulp.src('')
 //     .pipe(shell([
-//       'harp compile _dev _public'
+//       'harp compile _dev _dist'
 //     ]))
 // });
 
 gulp.task('build', function (done) {
-  child_process.exec('harp compile _dev _public', { stdio: 'inherit' })
+  child_process.exec('harp compile _dev _dist', { stdio: 'inherit' })
     .on('close', done);
 });
 
 gulp.task('clean', function () {
   return del([
-    '_public/*',
-    '_public/**/*'
+    '_dist/*',
+    '_dist/**/*'
   ]);
 });
 
