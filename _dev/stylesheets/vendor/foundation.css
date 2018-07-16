@@ -431,7 +431,6 @@ button {
   display: none !important; }
 
 .row {
-  max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
   display: -webkit-box;

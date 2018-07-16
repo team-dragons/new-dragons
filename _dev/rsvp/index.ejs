@@ -1,23 +1,22 @@
 <%- partial(`../_layouts/_default.head`, { title : "Zena Jun &amp; Warren Shea Wedding" }) %>
 <%- partial(`../_layouts/_default.header`) %>
     <main>
-      <!-- <header class="home rsvp">
+      <header class="home rsvp">
         <div class="wrapper align-self-middle">
           <h1>RSVP</h1>
           <h2>Please RSVP by August 10, 2018</h2>
         </div>
-      </header> -->
-      <br><br><br><br><br><br><br><br><br><br><br><br>
-      <div class="wrapper">
-        <div class="row small-12 medium-8 align-center">
+      </header>
+      <div class="rsvp wrapper">
+        <div class="row small-12 align-center">
           <form name="rsvp" action="/rsvp/thank-you/" method="post">
             <div class="row">
-              <div class="small-12 medium-6 column">
+              <div class="small-12 large-6 column">
                 <label for="guest1-first-name" class="screen-reader-only">Your First Name</label>
                 <input type="text" placeholder="Your First Name *" name="guest1FirstName" id="guest1-first-name" value="">
                 <span class="guest1FirstName error-message">Please enter your first name</span>
               </div>
-              <div class="small-12 medium-6 column">
+              <div class="small-12 large-6 column">
                 <label for="guest1-last-name" class="screen-reader-only">Your Last Name</label>
                 <input type="text" placeholder="Your Last Name *" name="guest1LastName" id="guest1-last-name" value="">
                 <span class="guest1LastName error-message">Please enter your last name</span>
@@ -31,7 +30,6 @@
               </select>
               <span class="attendance error-message">Please confirm your attendance</span>
               <input type="hidden" name="guest1Meal" value="adult">
-              <input type="hidden" name="guest1HighChair" value="No">
             </div>
 
             <div class="not-attend text-center">
@@ -41,20 +39,20 @@
             <div class="attend-ceremony-reception">
               <div class="guest">
                 <div class="row">
-                  <div class="small-12 medium-2 column align-self-middle">
+                  <div class="small-12 large-2 column align-self-middle guest-heading-container">
                     <span class="guest-heading">Guest 1 :</span>
                   </div>
-                  <div class="small-12 medium-3 column">
+                  <div class="small-12 large-3 column">
                     <label for="guest3-first-name" class="screen-reader-only">First Name</label>
                     <input type="text" placeholder="First Name" name="guest2FirstName" id="guest2-first-name" value="">
                     <span class="guest2FirstName error-message">Please enter first name</span>
                   </div>
-                  <div class="small-12 medium-3 column">
+                  <div class="small-12 large-3 column">
                     <label for="guest2-last-name" class="screen-reader-only">Last Name</label>
                     <input type="text" placeholder="Last Name" name="guest2LastName" id="guest2-last-name" value="">
                     <span class="guest2LastName error-message">Please enter last name</span>
                   </div>
-                  <div class="small-12 medium-4 column">
+                  <div class="small-12 large-3 column">
                     <select name="guest2Meal" class="meal">
                       <option value="">Meal type</option>
                       <option value="adult">Adult meal</option>
@@ -62,26 +60,23 @@
                       <option value="none">No meal</option>
                     </select>
                     <span class="guest2Meal error-message">Please confirm the meal type</span>
-                    <div class="small-12 column hide">
-                      <input type="checkmark" name="guest2HighChair" value="Yes">
-                    </div>
                   </div>
                 </div>
               </div>
               <div class="guest">
                 <div class="row">
-                  <div class="small-12 medium-2 column align-self-middle">
+                  <div class="small-12 large-2 column align-self-middle guest-heading-container">
                     <span class="guest-heading">Guest 2 :</span>
                   </div>
-                  <div class="small-12 medium-3 column">
+                  <div class="small-12 large-3 column">
                     <label for="guest3-first-name" class="screen-reader-only">First Name</label>
                     <input type="text" placeholder="First Name" name="guest3FirstName" id="guest3-first-name" value="">
                   </div>
-                  <div class="small-12 medium-3 column">
+                  <div class="small-12 large-3 column">
                     <label for="guest3-last-name" class="screen-reader-only">Last Name</label>
                     <input type="text" placeholder="Last Name" name="guest3LastName" id="guest3-last-name" value="">
                   </div>
-                  <div class="small-12 medium-4 column">
+                  <div class="small-12 large-3 column">
                     <select name="guest3Meal" class="meal">
                       <option value="">Meal type</option>
                       <option value="adult">Adult meal</option>
@@ -89,26 +84,23 @@
                       <option value="none">No meal</option>
                     </select>
                     <span class="guest3Meal error-message">Please confirm the meal type</span>
-                    <div class="small-12 column hide">
-                      <input type="checkmark" name="guest3HighChair" value="Yes">
-                    </div>
                   </div>
                 </div>
               </div>
               <div class="guest">
                 <div class="row">
-                  <div class="small-12 medium-2 column align-self-middle">
+                  <div class="small-12 large-2 column align-self-middle guest-heading-container">
                     <span class="guest-heading">Guest 3 :</span>
                   </div>
-                  <div class="small-12 medium-3 column">
+                  <div class="small-12 large-3 column">
                     <label for="guest4-first-name" class="screen-reader-only">First Name</label>
                     <input type="text" placeholder="First Name" name="guest4FirstName" id="guest4-first-name" value="">
                   </div>
-                  <div class="small-12 medium-3 column">
+                  <div class="small-12 large-3 column">
                     <label for="guest4-last-name" class="screen-reader-only">Last Name</label>
                     <input type="text" placeholder="Last Name" name="guest4LastName" id="guest4-last-name" value="">
                   </div>
-                  <div class="small-12 medium-4 column">
+                  <div class="small-12 large-3 column">
                     <select name="guest4Meal" class="meal">
                       <option value="">Meal type</option>
                       <option value="adult">Adult meal</option>
@@ -116,26 +108,23 @@
                       <option value="none">No meal</option>
                     </select>
                     <span class="guest4Meal error-message">Please confirm the meal type</span>
-                    <div class="small-12 column hide">
-                      <input type="checkmark" name="guest4HighChair" value="Yes">
-                    </div>
                   </div>
                 </div>
               </div>
               <div class="guest">
                 <div class="row">
-                  <div class="small-12 medium-2 column align-self-middle">
+                  <div class="small-12 large-2 column align-self-middle guest-heading-container">
                     <span class="guest-heading">Guest 4 :</span>
                   </div>
-                  <div class="small-12 medium-3 column">
+                  <div class="small-12 large-3 column">
                     <label for="guest5-first-name" class="screen-reader-only">First Name</label>
                     <input type="text" placeholder="First Name" name="guest5FirstName" id="guest5-first-name" value="">
                   </div>
-                  <div class="small-12 medium-3 column">
+                  <div class="small-12 large-3 column">
                     <label for="guest5-last-name" class="screen-reader-only">Last Name</label>
                     <input type="text" placeholder="Last Name" name="guest5LastName" id="guest5-last-name" value="">
                   </div>
-                  <div class="small-12 medium-4 column">
+                  <div class="small-12 large-3 column">
                     <select name="guest5Meal" class="meal">
                       <option value="">Meal type</option>
                       <option value="adult">Adult meal</option>
@@ -143,17 +132,24 @@
                       <option value="none">No meal</option>
                     </select>
                     <span class="guest5Meal error-message">Please confirm the meal type</span>
-                    <div class="small-12 column hide">
-                      <input type="checkmark" name="guest5HighChair" value="Yes">
-                    </div>
                   </div>
+                </div>
+              </div>
+              <div class="row high-chairs">
+                <div class="small-12 column">
+                  <select name="highchairs">
+                    <option value="None">Number of high chairs needed</option>
+                    <option value="0">Number of high chairs needed: 0</option>
+                    <option value="1">Number of high chairs needed: 1</option>
+                    <option value="2">Number of high chairs needed: 2</option>
+                    <option value="3">Number of high chairs needed: 3</option>
+                  </select>
                 </div>
               </div>
               <div class="row">
                 <div class="small-12 column">
-                  <label for="guests-dietary-restrictions" class="screen-reader-only">Dietary resections</label>
-                  <input type="text" placeholder="Please indicate any dietary restrictions for you and your guests" name="guestsDietaryRestrictions"
-                    id="guests-dietary-restrictions" value="">
+                  <label for="guests-dietary-restrictions" class="screen-reader-only">Dietary restrictions</label>
+                  <input type="text" placeholder="Please indicate any dietary restrictions" name="guestsDietaryRestrictions" id="guests-dietary-restrictions" value="">
                 </div>
               </div>
             </div>
@@ -165,9 +161,7 @@
               </div>
             </div>
 
-            <div>
-              <button type="submit" name="submit-button" class="primary">Submit</button>
-            </div>
+            <button type="submit" name="submit-button" class="primary">Submit</button>
           </form>
         </div>
       </div>

@@ -236,11 +236,8 @@ theDragons.core.extend('formRSVP', function () {
         }
       });
       $('.meal').on("change", function (ev) {
-        if (this.value === "children" || this.value === "children") {
-          this
-        } else if (this.value === "not-attend") {
-          $(".attend-ceremony-reception").hide();
-          $(".not-attend").fadeIn();
+        if (this.value === "children" || this.value === "none") {
+          $(".high-chairs").fadeIn();
         }
       });
     },
@@ -414,11 +411,11 @@ theDragons.core.extend('scrollRevealSticky', function () {
       }
     },
     showAndHideScrollReveal: function ($scrollRevealNavSticky) {
-      if ($w.scrollTop() < 350) {
+      if ($w.scrollTop() < 150) {
         $scrollRevealNavSticky.css({
           transition: 'all 0.5s ease-in 0s',
           opacity: 0,
-          transform: 'translate(0,-75px)'
+          transform: 'translate(0,-86px)'
         });
       } else {
         $scrollRevealNavSticky.css({

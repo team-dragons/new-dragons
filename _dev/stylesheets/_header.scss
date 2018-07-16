@@ -4,7 +4,7 @@ header {
     background: linear-gradient(to bottom, rgba(150, 150, 150, 0.25), rgba(0, 0, 0, 0.25)), url("/images/mariana-acevedo-376818-unsplash-2000x1333-tiny.jpg") no-repeat;
     background-size: cover;
     height: 400px;
-    color:#fff;
+    color:$primaryLightColor;
     display:flex;
     @media (min-width: 40rem) {
       height: 100vh;
@@ -38,7 +38,7 @@ header.schedule {
   background-position: center 75%;
   background-size: cover;
   height: 400px;
-  color:#fff;
+  color:$primaryLightColor;
   display:flex;
   @media (min-width: 40rem) {
     height: 50vh;
@@ -51,7 +51,7 @@ header.faqs {
   background-position: center 75%;
   background-size: cover;
   height: 400px;
-  color: #fff;
+  color: $primaryLightColor;
   display: flex;
   @media (min-width: 40rem) {
     height: 50vh;

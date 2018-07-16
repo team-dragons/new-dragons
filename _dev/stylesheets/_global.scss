@@ -8,7 +8,33 @@ body {
 }
 
 .wrapper {
+  max-width: 1100px;
   width: 80%;
   max-width: 1100px;
   margin: 0 auto;
+}
+
+button {
+  text-transform: uppercase;
+  text-align:center;
+  padding:1rem 3rem;
+  transition: all 0.25s linear 0s;
+  color:$primaryDarkColor;
+  border:1px solid $primaryDarkColor;
+  &:hover{
+    color:$primaryLightColor;
+    border:1px solid $primaryDarkColor;
+    background-color: $primaryDarkColor;
+    cursor:pointer;
+    transition: all 0.125s linear 0s;
+  }
+  &.reverse{
+    color:$primaryLightColor;
+    border:1px solid $primaryLightColor;
+    &:hover{
+      color:$primaryDarkColor;
+      border:1px solid $primaryLightColor;
+      background-color: $primaryLightColor;
+    }
+  }
 }
