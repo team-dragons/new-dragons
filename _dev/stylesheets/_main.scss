@@ -18,11 +18,13 @@ p.time {
 // FAQs
 section.faqs {
   text-align: center;
+  padding: 3rem 150px;
 }
 
 p.question {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
+  font-family: $secondaryFont;
 }
 
 // Accommodations
