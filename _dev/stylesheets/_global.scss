@@ -147,3 +147,10 @@ button {
     width: 100%;
   }
 }
+
+a.map-directions {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-family: $primaryFont;
+}

@@ -279,11 +279,6 @@ theDragons.core.extend('formRSVP', function () {
       self.displayStatus("guest1FirstName", "alphaNumeric");
       self.displayStatus("guest1LastName", "alphaNumeric");
       self.displayStatus("attendance", "dropDown");
-      if ($('select[name=attendance]').val() === "attend-ceremony-reception") {
-        self.displayStatus("guest2FirstName", "alphaNumeric");
-        self.displayStatus("guest2LastName", "alphaNumeric");
-        self.displayStatus("guest2Meal", "dropDown");
-      }
       if (errormessage != "") {
         return false;
       }
