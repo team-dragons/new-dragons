@@ -201,12 +201,7 @@ theDragons.core.extend('formRSVP', function () {
         self.displayStatus("guest2FirstName", "alphaNumeric");
         self.displayStatus("guest2LastName", "alphaNumeric");
         self.displayStatus("guest2Meal", "dropDown");
-
       }
-      // self.displayStatus("address", "alphaNumeric");
-      // self.displayStatus("city", "alphaNumeric");
-      // self.displayStatus("province", "alphaNumeric");
-      // self.displayStatus("postalCode", "postalCode");
       if (errormessage != "") {
         return false;
       }
@@ -263,23 +258,23 @@ theDragons.core.extend('hamburgerMenu', function () {
     addEventListeners: function (){
       $('#nav-icon').click(() => {
         $('nav.container').toggleClass('active-nav');
-        $('div.logo-menu-container').toggleClass('hide-for-small-only');        
+        $('div.logo-menu-container').toggleClass('hide-for-small-only');
       });
       $('.logo-menu-container ul li a').click(() => {
         $('div.logo-menu-container').removeClass('active-nav');
         $('#nav-icon').removeClass('open');
       });
       $('#nav-icon').click(function () {
-        $(this).toggleClass('open');        
+        $(this).toggleClass('open');
         if ($('#nav-icon').hasClass('open')) {
-          $('html').css({
-            overflow: 'hidden',
-            height: '100%'
+          $('body').css({
+            "position":'fixed',
+            "overflow-y":'scroll'
           });
         } else {
           $('html').css({
-            overflow: 'auto',
-            height: 'auto'
+            "position": 'static',
+            "overflow-y": 'auto'
           });
         }
       });
@@ -359,7 +354,7 @@ theDragons.core.extend('scrollHideNav', function () {
   return {
     initialize: function () {
       var self = this;
-      const windowWidth = $(document).width();      
+      const windowWidth = $(document).width();
       if ($.find('.scroll-hide-nav').length > 0 && windowWidth >= 640) {
         $scrollHideNav = $('.scroll-hide-nav');
         $scrollHideNav.css({

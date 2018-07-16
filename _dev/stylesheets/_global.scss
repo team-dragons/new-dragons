@@ -1,5 +1,25 @@
+$primaryFont: 'Poppins', sans-serif;
+$secondaryFont: 'Playfair Display', serif;
+$accentFont: 'Fredericka the Great', cursive;
+
+$primaryDarkColor: #444;
+$primaryLightColor: #fff;
+$pageBackgroundColor: #ededed;
+$errorColor: #e00;
+$backgroundColorSeperator: #6c0303;
+
+$h1: 3rem;
+$h2: 2.5rem;
+$h3: 2rem;
+$h4: 1.5rem;
+$h1-desktop: 9rem;
+$h2-desktop: 5rem;
+$h3-desktop: 3rem;
+$h4-desktop: 1.75rem;
+
 html {
   font-size: 62.5%;
+  background-color: $pageBackgroundColor;
 }
 
 body {
@@ -12,6 +32,18 @@ body {
   width: 80%;
   max-width: 1100px;
   margin: 0 auto;
+}
+
+h1,h2,h3,h4{margin:0;font-size:inherit;font-weight:normal;}
+.h1 {font-size:$h1;}
+.h2 {font-size:$h2;}
+.h3 {font-size:$h3;}
+.h4 {font-size:$h4;}
+@media (min-width: 40rem) {
+  .h1 {font-size:$h1-desktop;}
+  .h2 {font-size:$h2-desktop;}
+  .h3 {font-size:$h3-desktop;}
+  .h4 {font-size:$h4-desktop;}
 }
 
 button {

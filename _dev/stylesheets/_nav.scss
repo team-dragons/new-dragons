@@ -48,7 +48,7 @@ div.logo-menu-container {
             height: 2px;
             margin: 2px 0 0;
             transition: $animate;
-            transition-duration: 0.5s;
+            transition-duration: 0.25s;
             opacity: 1;
             @media (min-width: 40rem) {
               opacity: 0;
@@ -101,10 +101,6 @@ div.logo-menu-container {
   display: none;
 }
 
-.main-nav {
-  
-}
-
 @media (min-width: 40rem) {
   div.logo-menu-container {
     &.scroll-hide-nav {
@@ -127,7 +123,7 @@ div.logo-menu-container {
       background-color:$primaryLightColor;
       z-index:2;
       transform: translate(0,-86px);
-      display: block;   
+      display: block;
       ul li a {
         color: $primaryDarkColor;
         font-size: 1.35rem;

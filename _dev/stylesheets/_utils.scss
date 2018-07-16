@@ -1,8 +1,7 @@
-$primaryFont: 'Poppins', sans-serif;
-$secondaryFont: 'Playfair Display', serif;
-$accentFont: 'Fredericka the Great', cursive;
+.uppercase{
+    text-transform:uppercase;
+}
 
-$primaryDarkColor: #444;
-$primaryLightColor: #fff;
-
-$errorColor: #e00;
+.secondaryFont{
+    font-family:$secondaryFont;
+}

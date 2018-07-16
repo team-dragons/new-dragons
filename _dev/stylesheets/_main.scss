@@ -1,18 +1,16 @@
 .background-full-separator{
-  background-color:#FFFDE7;
+  background-color:$backgroundColorSeperator;
+  color:$primaryLightColor;
 }
-
 // Home
 
 // Schedule
-p.time, p.event {
-  text-align: center;
-}
-
-p.time {
-  font-family: $secondaryFont;  
-  font-size: 3vh;
-  font-weight: bold;
+.wrapper.schedule{
+  margin:10rem auto;
+  text-align:center;
+  .event {
+    margin:7.5rem 0;
+  }
 }
 
 // FAQs
