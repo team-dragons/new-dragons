@@ -1,43 +1,57 @@
 <%- partial(`../_layouts/_default.head`, { title : "FAQs - Zena Jun &amp; Warren Shea Wedding" }) %>
 <%- partial(`../_layouts/_default.header`) %>
-    <main>
-      <header class="home faqs">
+    <main class="faqs">
+      <header>
         <div class="wrapper align-self-middle">
-          <h1 class="h1">FAQs</h1>
+          <h1 class="h1 scroll-reveal">FAQs</h1>
         </div>
       </header>
-      <div class="wrapper">
-        <section class="faqs">
-          <p class="scroll-reveal question">Is there parking?</p>
-          <p class="scroll-reveal answer">Yes, there is free parking available at Miller Lash House.  There is also handicap parking available right next to the Miller Lash House building.</p>
-          <p class="scroll-reveal question">What time should I arrive?</p>
-          <p class="scroll-reveal answer">Guests are welcome to arrive at 5:00, the ceremony will begin promptly at 5:30</p>
-          <p class="scroll-reveal question">Will the ceremony be taking place indoors or outdoors?</p>
-          <p class="scroll-reveal answer">The ceremony will take place outside (weather permitting).  There is an indoor backup plan in case of bad weather. </p>
-          <p class="scroll-reveal question">Are kids welcome?</p>
-          <p class="scroll-reveal answer">Yes!  Please be sure to fill out our RSVP accordingly!</p>
-          <p class="scroll-reveal question">Is there a dress code?</p>
-          <p class="scroll-reveal answer">Adults: Semiformal</p>
-          <p class="scroll-reveal answer">Children: Whatever you can get them to wear.</p>
-          <p class="scroll-reveal question">I am coming from out of town.  Where should I stay?</p>
-          <p class="scroll-reveal answer">Please see our <a href="/accommodations/">Accommodations</a> page for more information.</p>
-          <p class="scroll-reveal question">How do I get to the venue?</p>
-          <p class="scroll-reveal answer">Miller Lash House is located at 130 Old Kingston Road, Scarborough.</p>
-          <div id="map" class="scroll-reveal map">
-            
+      <div class="wrapper section-padding">
+        <div class="row small-12 medium-10 large-8 align-center">
+          <div class="scroll-reveal question">
+            <h3 class="h3 secondaryFont">What time should I arrive?</h3>
+            <p>Guests are welcome to arrive at 5:00 PM, the ceremony will begin promptly at 5:30 PM</p>
           </div>
-      
-          
-          <p class="scroll-reveal question">Are the ceremony and reception  at the same location</p>
-          <p class="scroll-reveal answer">Yes, everything will take place at Miller Lash House</p>
-          <p class="scroll-reveal question">I have a specific questions</p>
-          <p class="scroll-reveal answer">Please contact us by email or phone</p>  
-          <p class="scroll-reveal question">Will Loki be there?</p>
-          <p class="scroll-reveal answer">Loki has a busy schedule of napping, but has agreed to make an appearance.  Arf!</p>  
-        </section>
+          <div class="scroll-reveal question">
+            <h3 class="h3 secondaryFont">How do I get to the venue?</h3>
+            <p>Miller Lash House is located at 130 Old Kingston Road, Scarborough.</p>
+            <div class="scroll-reveal map" id="map"></div>
+          </div>
+          <div class="scroll-reveal question">
+            <h3 class="h3 secondaryFont">Is there parking?</h3>
+            <p>Yes, there is free parking available at Miller Lash House.  There is also handicap parking available right next to the Miller Lash House building.</p>
+          </div>
+          <div class="scroll-reveal question">
+            <h3 class="h3 secondaryFont">Are kids welcome?</h3>
+            <p>Yes! Please be sure to fill out our RSVP accordingly!</p>
+          </div>
+          <div class="scroll-reveal question">
+            <h3 class="h3 secondaryFont">Will the ceremony be taking place indoors or outdoors?</h3>
+            <p>The ceremony will take place outside (weather permitting).  There is an indoor backup plan in case of bad weather.</p>
+          </div>
+          <div class="scroll-reveal question">
+            <h3 class="h3 secondaryFont">Is there a dress code?</h3>
+            <p>Adults: Semiformal</p>
+            <p>Children: Whatever you can get them to wear.</p>
+          </div>
+          <div class="scroll-reveal question">
+            <h3 class="h3 secondaryFont">I am coming from out of town. Where should I stay?</h3>
+            <p>Please see our <a href="/accommodations/">Accommodations</a> page for more information.</p>
+          </div>
+          <div class="scroll-reveal question">
+            <h3 class="h3 secondaryFont">Are the ceremony and reception at the same location</h3>
+            <p>Yes, everything will take place at Miller Lash House</p>
+          </div>
+          <div class="scroll-reveal question">
+            <h3 class="h3 secondaryFont">I have a specific questions</h3>
+            <p>Please contact us by email or phone</p>  
+          </div>
+          <div class="scroll-reveal question">
+            <h3 class="h3 secondaryFont">Will Loki be there?</h3>
+            <p><img src="/images/loki.png" class="loki-small"> Loki has a busy schedule of napping but has agreed to make an appearance. Arf!</p>
+          </div>
+        </div>
       </div>
     </main>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQpmneAk51CgIrjXPEj61yvXfiFSwkiwc" type="text/javascript"></script>
-  
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQpmneAk51CgIrjXPEj61yvXfiFSwkiwc" type="text/javascript"></script>
 <%- partial(`../_layouts/_default.footer`) %>

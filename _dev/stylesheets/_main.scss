@@ -1,179 +1,146 @@
-.background-full-separator{
-  background-color:$backgroundColorSeperator;
-  color:$primaryLightColor;
-}
-// Home
-section.home {
-  padding: 5rem 0;
-  text-align: center;
-  font-size: 2rem;
-  @media (min-width: 40rem) {
-    padding: 10rem;
-  }
-}
-
-.home p.address {
-  margin:0.5rem;
-}
-
-a.rsvp, a.directions {
-  display: inline-block;
-  margin: 2rem;
-  padding: 1rem 3rem;
-  border: 1px solid #444;
-  transition: all 0.25s linear 0s;
-  text-decoration: none;
-  color: #444;
-  &:hover {
-    color: #fff;
-    border: 1px solid #444;
-    background-color: #444;
-    cursor: pointer;
-  }
-}
-
-a.directions {
-  @media (min-width: 40rem) {
-    display: none;
-  }
-}
-
-// Schedule
-.wrapper.schedule{
-  margin:10rem auto;
-  text-align:center;
-  .event {
-    margin:7.5rem 0;
-  }
-}
-
-// FAQs
-section.faqs {
-  text-align: center;
-  padding: 5rem 0;
-  @media (min-width: 1100px) {
-    padding: 10rem;
-  }
-}
-
-p.question {
-  font-size: 2.5rem;
-  font-weight: bold;
-  font-family: $secondaryFont;
-}
-
-
-
-// Accommodations
-section.accommodations {
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 50px 0;   
-}
-
-p.hotel {
-  font-weight: bold;
-}
-
-section.accommodations img {
-  width: 350px;
-  height: 175px;
-  display: block;
-  margin: 0 auto;
-}
-// RSVP
-.rsvp.wrapper{
-  @media (min-width: 64rem) {
-    max-width:900px;
-  }
-}
-form[name="rsvp"] {
-  width:100%;
-  padding:10rem 0;
-  .row {
-    padding-bottom:0;
-    @media (min-width: 64rem) {
-      padding-bottom:2rem;
-    } 
-  }
-  .row .column {
-    padding-bottom:1.5rem;
-    @media (min-width: 64rem) {
-      padding-bottom:0;
-    } 
-  }
-  textarea{resize:none;height:12rem;}
-
-  input[type="text"].error,
-  input[type="number"].error,
-  select.error {border:1px solid $errorColor}
-
-  .error-message {display:none}
-  .error-message.active {display:block;color:$errorColor;font-size:1.4rem;}
-
-  label.screen-reader-only {overflow:hidden;position:absolute;width:1px;height:1px;border:0;clip:rect(0,0,0,0);margin:-1px;padding:0;top:-500px}
-
-  input[type="text"],
-  input[type="number"],
-  select {margin-bottom:0;}
-
-  textarea,input,select {
-    color:$primaryDarkColor;
-    background-color:#f6f6f6;
-    border:1px solid $primaryDarkColor;
-    padding:1rem 2rem;
-    line-height:2.5rem;
-    font-size:1.4rem;
-  }
-
-  input[type="text"]::-webkit-input-placeholder,
-  input[type="number"]::-webkit-input-placeholder,
-  select,
-  textarea {
-    color:#7c7c7c;
-  }
-
-  select {
-    width:100%;
-    overflow-wrap:initial;
-    box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
-  }
-
-  .attend-ceremony-reception {
-    display:none;
-  }
-  .not-attend {
-    display:none;
-    height: 7rem;
-  }
-  .guest-heading-container {
-    text-align: left;
-    @media (min-width: 64rem) {
-      text-align: right;
-    }   
-  }
-  .guest-heading{
-    font-family: $secondaryFont;  
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
-    @media (min-width: 64rem) {
-      padding-left: 0.9375rem;
-      padding-right:0.9375rem
+main {
+  &.home{
+    text-align:center;
+    p.address {
+      margin:0.5rem;
+    }
+    button.directions {
+      @media (min-width: 40rem) {
+        display: none;
+      }
+    }
+    .map{
+      @media (min-width: 40rem) {
+        height: 25rem;
+      }
     }
   }
-  .guest1 {
-    padding-bottom:3rem;
-    @media (min-width: 64rem) {
-      padding-bottom:2rem;
-    } 
+  &.schedule{
+    text-align:center;
   }
-  .high-chairs {
-    display:none;
+  &.faqs{
+    text-align:center;
+    .question{
+      padding:0 0 7.5rem;
+    }
+    .map{
+      @media (min-width: 40rem) {
+        height: 40rem;
+      }
+    }
+    .loki-small{
+      width:3rem;
+      margin-bottom:1rem;
+    }
   }
-  button.primary {
-    display:block;
-    margin:0 auto;
+  &.accommodations{
+    text-align:center;
+    p.hotel {
+      font-weight: bold;
+    }
+    img {
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+      @media (min-width: 40rem) {
+        width: 80%;
+        height: 64%;
+      }
+    }
+  }
+  &.rsvp{
+    .wrapper{
+      form[name="rsvp"] {
+        width:100%;
+        padding:10rem 0;
+        .row {
+          padding-bottom:0;
+          @media (min-width: 64rem) {
+            padding-bottom:2rem;
+          } 
+        }
+        .row .column {
+          padding-bottom:1.5rem;
+          @media (min-width: 64rem) {
+            padding-bottom:0;
+          } 
+        }
+        textarea{resize:none;height:12rem;}
+      
+        input[type="text"].error,
+        input[type="number"].error,
+        select.error {border:1px solid $errorColor}
+      
+        .error-message {display:none}
+        .error-message.active {display:block;color:$errorColor;font-size:1.4rem;}
+      
+        label.screen-reader-only {overflow:hidden;position:absolute;width:1px;height:1px;border:0;clip:rect(0,0,0,0);margin:-1px;padding:0;top:-500px}
+      
+        input[type="text"],
+        input[type="number"],
+        select {margin-bottom:0;}
+      
+        textarea,input,select {
+          color:$primaryDarkColor;
+          background-color:#f6f6f6;
+          border:1px solid $primaryDarkColor;
+          padding:1rem 2rem;
+          line-height:2.5rem;
+          font-size:1.4rem;
+        }
+      
+        input[type="text"]::-webkit-input-placeholder,
+        input[type="number"]::-webkit-input-placeholder,
+        select,
+        textarea {
+          color:#7c7c7c;
+        }
+      
+        select {
+          width:100%;
+          overflow-wrap:initial;
+          box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+        }
+      
+        .attend-ceremony-reception {
+          display:none;
+        }
+        .not-attend {
+          display:none;
+          height: 7rem;
+        }
+        .guest-heading-container {
+          text-align: left;
+          @media (min-width: 64rem) {
+            text-align: right;
+          }   
+        }
+        .guest-heading{
+          font-family: $secondaryFont;  
+          padding-left: 0.625rem;
+          padding-right: 0.625rem;
+          @media (min-width: 64rem) {
+            padding-left: 0.9375rem;
+            padding-right:0.9375rem
+          }
+        }
+        .guest1 {
+          padding-bottom:3rem;
+          @media (min-width: 64rem) {
+            padding-bottom:2rem;
+          } 
+        }
+        .high-chairs {
+          display:none;
+        }
+        button.primary {
+          display:block;
+          margin:0 auto;
+        }
+      }
+      @media (min-width: 64rem) {
+        max-width:900px;
+      }
+    }
   }
 }

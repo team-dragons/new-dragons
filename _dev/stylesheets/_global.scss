@@ -6,7 +6,7 @@ $primaryDarkColor: #444;
 $primaryLightColor: #fff;
 $pageBackgroundColor: #ededed;
 $errorColor: #e00;
-$backgroundColorSeperator: #6c0303;
+$backgroundColorSeperator: #464646;
 
 $h1: 3rem;
 $h2: 2.5rem;
@@ -14,12 +14,15 @@ $h3: 2rem;
 $h4: 1.5rem;
 $h1-desktop: 9rem;
 $h2-desktop: 5rem;
-$h3-desktop: 3rem;
+$h3-desktop: 2.5rem;
 $h4-desktop: 1.75rem;
+
+$animate: all 0.05s ease-in-out;
 
 html {
   font-size: 62.5%;
   background-color: $pageBackgroundColor;
+  color: $primaryDarkColor;
 }
 
 body {
@@ -30,7 +33,6 @@ body {
 .wrapper {
   max-width: 1100px;
   width: 80%;
-  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -46,6 +48,52 @@ h1,h2,h3,h4{margin:0;font-size:inherit;font-weight:normal;}
   .h4 {font-size:$h4-desktop;}
 }
 
+a {
+  text-decoration: dotted;
+  text-transform: uppercase;
+  text-align:center;
+  transition: all 0.25s linear 0s;
+  color:$primaryDarkColor;
+  position: relative;
+  transition: $animate;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    width: 0px;
+    height: 2px;
+    margin: 2px 0 0;
+    transition: $animate;
+    transition-duration: 0.25s;
+    opacity: 1;
+  }
+  &:before {
+    left: calc(50%);
+    background-color: $primaryDarkColor;
+  }
+  &:after {
+    right: calc(50%);
+    background-color: $primaryDarkColor;
+  }
+  &:hover {
+    &:before,
+    &:after {
+      width: 50%;
+      opacity: 1;
+    }
+  }
+  &.reverse{
+    color:$primaryLightColor;
+    &:before {
+      background-color: $primaryLightColor;
+    }
+    &:after {
+      background-color: $primaryLightColor;
+    }
+  }
+}
+
 button {
   text-transform: uppercase;
   text-align:center;
@@ -53,6 +101,7 @@ button {
   transition: all 0.25s linear 0s;
   color:$primaryDarkColor;
   border:1px solid $primaryDarkColor;
+  background:$primaryLightColor;
   &:hover{
     color:$primaryLightColor;
     border:1px solid $primaryDarkColor;
@@ -63,6 +112,7 @@ button {
   &.reverse{
     color:$primaryLightColor;
     border:1px solid $primaryLightColor;
+    background:$primaryDarkColor;
     &:hover{
       color:$primaryDarkColor;
       border:1px solid $primaryLightColor;
@@ -74,10 +124,8 @@ button {
 .map {
   display: none;
   @media (min-width: 40rem) {
+    color: $primaryDarkColor;
     display: block;
     width: 100%;
-    max-width: 600px;
-    height: 450px;
-    margin: 5rem auto;
   }
 }
