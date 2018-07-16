@@ -1,9 +1,20 @@
 footer {
+  border-top:10px solid $primaryDarkColorRed;
   padding:10rem 0 30rem;
   text-align: center;
   .loki{
     display:block;
     margin:0 auto 2rem;
     width:125px;
+  }
+  svg.heart{
+    font: bold 12px 'Arial';
+    width: 16px;
+    height: 16px;
+    text{
+      fill: $primaryDarkColorRed; stroke: $primaryLightColor; stroke-width:1px;
+      // stroke-dasharray: 2,2;
+      stroke-linejoin: round;
+    }
   }
 }

@@ -30,7 +30,7 @@ div.logo-menu-container {
         padding: 15px 5px;
         a {
           text-decoration: none;
-          color: $primaryDarkColor;
+          color: $primaryDarkColorRed;
           position: relative;
           padding: 0 1.25rem;
           font-size: 2rem;
@@ -53,11 +53,11 @@ div.logo-menu-container {
           }
           &:before {
             left: calc(50%);
-            background-color: $primaryDarkColor;
+            background-color: $primaryDarkColorRed;
           }
           &:after {
             right: calc(50%);
-            background-color: $primaryDarkColor;
+            background-color: $primaryDarkColorRed;
           }
         }
         &:hover {
@@ -119,16 +119,16 @@ div.logo-menu-container {
     &.scroll-reveal-nav-sticky {
       background-color:$primaryLightColor;
       z-index:2;
-      transform: translate(0,-86px);
+      transform: translate(0,-90px);
       display: block;
       ul li a {
         color: $primaryDarkColor;
         font-size: 1.35rem;
         &:before {
-          background-color: $primaryDarkColor;
+          background-color: $primaryDarkColorRed;
         }
         &:after {
-          background-color: $primaryDarkColor;
+          background-color: $primaryDarkColorRed;
         }
       }
       .logo svg.monogram .svg-fill {

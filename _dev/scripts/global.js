@@ -647,7 +647,7 @@ theDragons.core.extend('scrollRevealSticky', function () {
         $scrollRevealNavSticky.css({
           transition: 'all 0.5s ease-in 0s',
           opacity: 0,
-          transform: 'translate(0,-86px)'
+          transform: 'translate(0,-90px)'
         });
       } else {
         $scrollRevealNavSticky.css({

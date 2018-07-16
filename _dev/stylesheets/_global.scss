@@ -2,10 +2,11 @@ $primaryFont: 'Poppins', sans-serif;
 $secondaryFont: 'Playfair Display', serif;
 $accentFont: 'Fredericka the Great', cursive;
 
-$primaryDarkColor: #444;
+$primaryDarkColor: #464646;
+$primaryDarkColorRed: #883232;
 $primaryLightColor: #fff;
 $pageBackgroundColor: #ededed;
-$errorColor: #e00;
+$errorColor: #883232;
 $backgroundColorSeperator: #464646;
 
 $h1: 3rem;
@@ -92,6 +93,23 @@ a {
       background-color: $primaryLightColor;
     }
   }
+  &.no-underline{
+    &:before,
+    &:after{
+      width:0%;
+      left: 0;
+      right:0;
+      background-color: none;
+      opacity:0;
+    }
+    &:hover {
+      &:before,
+      &:after {
+        width:0%;
+        opacity: 0;
+      }
+    }
+  }
 }
 
 button {
@@ -99,24 +117,24 @@ button {
   text-align:center;
   padding:1rem 3rem;
   transition: all 0.25s linear 0s;
-  color:$primaryDarkColor;
-  border:1px solid $primaryDarkColor;
-  background:$primaryLightColor;
+  color:$primaryLightColor;
+  border:1px solid $primaryLightColor;
+  background:$primaryDarkColorRed;
   &:hover{
-    color:$primaryLightColor;
-    border:1px solid $primaryDarkColor;
-    background-color: $primaryDarkColor;
+    color:$primaryDarkColorRed;
+    border:1px solid $primaryDarkColorRed;
+    background-color: $primaryLightColor;
     cursor:pointer;
     transition: all 0.125s linear 0s;
   }
   &.reverse{
-    color:$primaryLightColor;
-    border:1px solid $primaryLightColor;
-    background:$primaryDarkColor;
+    color:$primaryDarkColorRed;
+    border:1px solid $primaryDarkColorRed;
+    background:$primaryLightColor;
     &:hover{
-      color:$primaryDarkColor;
-      border:1px solid $primaryLightColor;
-      background-color: $primaryLightColor;
+      color:$primaryLightColor;
+      border:1px solid $primaryDarkColorRed;
+      background-color: $primaryDarkColorRed;
     }
   }
 }

@@ -58,7 +58,7 @@
     } catch (PDOException $e) {
       print "An error prevented this operation from being executed.";
     }
-    
+
     $to = "warren.shea@gmail.com,zena.jun@gmail.com";
     $subject = "Wedding - RSVP - " . $form_name;
     $msg =  "<table style='font-size: 12px;font-family: courier new;'><tr><td><strong>" .
@@ -80,7 +80,7 @@
         "guest5Meal</strong></td><td>: " . $guest5Meal . "</td></tr><tr><td><strong>" .
         "highchairs</strong></td><td>: " . $highchairs . "</td></tr><tr><td><strong>" .
         "guestsDietaryRestrictions</strong></td><td>: " . $guestsDietaryRestrictions . "</td></tr><tr><td><strong>" .
-        "optionalMessage</strong></td><td>: " . $optionalMessage . "</td></tr><tr><td><strong>" .  
+        "optionalMessage</strong></td><td>: " . $optionalMessage . "</td></tr><tr><td><strong>" .
         "Time</strong></td><td>: " . date("h:i:s a") . "</td></tr>" .
     "</table>";
     $headers = "Content-type: text/html;";
@@ -170,17 +170,18 @@
         </nav>
       </div>
     </nav>
-    <main>
-      <header class="home rsvp">
+    <main class="rsvp">
+      <header>
         <div class="wrapper align-self-middle">
-          <h1>Thank you!</h1>
+          <h1 class="h1 uppercase scroll-reveal">Thank you!</h1>
         </div>
       </header>
     </main>
     <footer class="background-full-separator">
       <div class="wrapper">
         <img src="/images/loki.png" class="loki">
-        <p>Designed and Developed by Zena &amp; Warren &amp; Loki</p>
+        <p>♡ Designed and developed with love ♡</p>
+        <p>by <a href="http://www.zenajun.com" target="_blank" class="reverse">Zena</a> &amp; <a href="http://www.warrenshea.com" target="_blank" class="reverse">Warren</a> &amp; <a href="https://www.facebook.com/Loki-The-Dog-of-Mischief-583192948469940/" target="_blank" class="reverse">Loki</a></p>
       </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
