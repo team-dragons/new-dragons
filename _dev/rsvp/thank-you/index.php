@@ -180,7 +180,7 @@
     <footer class="background-full-separator">
       <div class="wrapper">
         <img src="/images/loki.png" class="loki">
-        <p>♡ Designed and developed with love ♡</p>
+        <p><svg viewBox="0 -11 12 12" class="heart"><text>❤</text></svg> Designed and developed with love <svg viewBox="0 -11 12 12" class="heart"><text>❤</text></svg></p>
         <p>by <a href="http://www.zenajun.com" target="_blank" class="reverse">Zena</a> &amp; <a href="http://www.warrenshea.com" target="_blank" class="reverse">Warren</a> &amp; <a href="https://www.facebook.com/Loki-The-Dog-of-Mischief-583192948469940/" target="_blank" class="reverse">Loki</a></p>
       </div>
     </footer>
