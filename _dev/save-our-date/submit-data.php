@@ -32,16 +32,16 @@
     } catch (PDOException $e) {
       print "An error prevented this operation from being executed.";
     }
-    
+
     $to = "warren.shea@gmail.com,zena.jun@gmail.com";
     $subject = "Wedding - Guest Address - " . $form_name;
     $msg =  "<table style='font-size: 12px;font-family: courier new;'><tr><td><strong>" .
     "Name</strong></td><td>: " . $form_name . "</td></tr><tr><td><strong>" .
     "Address</strong></td><td>: " . $form_address . "</td></tr><tr><td><strong>" .
     "City</strong></td><td>: " . $form_city . "</td></tr><tr><td><strong>" .
-    "Province</strong></td><td>: " . $form_province . "</td></tr><tr><td><strong>" .  
-    "Postal Code </strong></td><td>: " . $form_postalCode . "</td></tr><tr><td><strong>" .  
-    "Optional Message </strong></td><td>: " . $form_optional . "</td></tr><tr><td><strong>" .  
+    "Province</strong></td><td>: " . $form_province . "</td></tr><tr><td><strong>" .
+    "Postal Code </strong></td><td>: " . $form_postalCode . "</td></tr><tr><td><strong>" .
+    "Optional Message </strong></td><td>: " . $form_optional . "</td></tr><tr><td><strong>" .
     "Time</strong></td><td>: " . date("h:i:s a") . "</td></tr>" .
     "</table>";
     $headers = "Content-type: text/html;";

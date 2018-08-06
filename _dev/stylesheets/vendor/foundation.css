@@ -450,7 +450,7 @@ button {
   .row.collapse > .columns > .row {
     margin-left: 0;
     margin-right: 0; }
-		 
+
 .column, .columns {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 0px;

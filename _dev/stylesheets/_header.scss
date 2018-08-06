@@ -10,11 +10,11 @@ main {
     display:flex;
     @media (min-width: 40rem) {
       height: 100vh;
-    }    
+    }
   }
   &.schedule header {
     background: linear-gradient(to bottom, rgba(150, 150, 150, 0.25), rgba(0, 0, 0, 0.25)), url("/images/ben-rosett-12807-unsplash-2000x900-tiny.jpg"), no-repeat;
-    background-position: center 75%;    
+    background-position: center 75%;
   }
   &.faqs header {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),url("/images/ankush-minda-547827-unsplash-2000x900-tiny.jpg"), no-repeat;
@@ -40,7 +40,7 @@ main {
       height: 50vh;
     }
   }
-  h1, h2, h3, button {
+  h1, h2, h3, button, p {
     -webkit-animation: fadein 2.6s;
        -moz-animation: fadein 2.6s;
          -o-animation: fadein 2.6s;
@@ -49,6 +49,5 @@ main {
   @keyframes fadein {
       from { opacity: 0; }
       to   { opacity: 1; }
-  }  
+  }
 }
-
