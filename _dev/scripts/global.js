@@ -228,7 +228,7 @@ theDragons.core.extend('formSaveOurDate', function () {
       return true;
     },
     //displayStatus(): highlights/hides the border of the input that has an issue + adds/hides the error message; this function is customizable
-    //@param {string} elementName is the name of the DOM object being tested - used here for 'error-message'  
+    //@param {string} elementName is the name of the DOM object being tested - used here for 'error-message'
     //@param {string} type is the character set to be validated again (e.g. alphaNumeric, numeric, email, postalCode, dropDown, checkBox, radioButton)
     displayStatus: function (elementName, type) {
       if (theDragons.formValidation.checkField(elementName, type)) {
@@ -285,7 +285,7 @@ theDragons.core.extend('formRSVP', function () {
       return true;
     },
     //displayStatus(): highlights/hides the border of the input that has an issue + adds/hides the error message; this function is customizable
-    //@param {string} elementName is the name of the DOM object being tested - used here for 'error-message'  
+    //@param {string} elementName is the name of the DOM object being tested - used here for 'error-message'
     //@param {string} type is the character set to be validated again (e.g. alphaNumeric, numeric, email, postalCode, dropDown, checkBox, radioButton)
     displayStatus: function (elementName, type) {
       if (theDragons.formValidation.checkField(elementName, type)) {
@@ -383,7 +383,7 @@ theDragons.core.extend('smoothScroll', function () {
 
 theDragons.core.extend('loadMap', function() {
   const app = {};
-  
+
   return {
     initialize: function () {
       if (window.location.pathname === "/" || window.location.pathname === "/faqs/") {
@@ -521,11 +521,11 @@ theDragons.core.extend('loadMap', function() {
 
       const infoWindow = new google.maps.InfoWindow();
       google.maps.event.addListener(millerLashHouse, 'click', function () {
-        infoWindow.setContent(`Miller Lash House<br><a target="_blank" href="https://maps.google.com/maps?ll=43.779963,-79.185377&amp;z=16&amp;t=m&amp;hl=en-CA&amp;gl=CA&amp;mapclient=embed&amp;daddr=Miller%20Lash%20House%20130%20Old%20Kingston%20Rd%20Scarborough%2C%20ON%20M1E%203J5@43.7795312,-79.1846148">Get Directions</a>  
+        infoWindow.setContent(`Miller Lash House<br><a target="_blank" href="https://maps.google.com/maps?ll=43.779963,-79.185377&amp;z=16&amp;t=m&amp;hl=en-CA&amp;gl=CA&amp;mapclient=embed&amp;daddr=Miller%20Lash%20House%20130%20Old%20Kingston%20Rd%20Scarborough%2C%20ON%20M1E%203J5@43.7795312,-79.1846148">Get Directions</a>
         `);
         infoWindow.open(app.map, millerLashHouse);
       });
-    
+
     }
   }
 });
@@ -547,14 +547,14 @@ theDragons.core.extend('scrollReveal', function () {
       }
     },
     showAndHideScrollReveal: function ($scrollReveal) {
-      let offset = 0;     
+      let offset = 0;
       if (theDragons.core.getViewportWidth() <= 640) {
         offset = 0;
       } else {
         offset = 120;
       }
       //console.log(`${$w.scrollTop()} > ${$scrollReveal.offset().top} - ${parseInt(theDragons.core.getViewportHeight())}`);
-      if ((($w.scrollTop() < ($scrollReveal.offset().top - offset))) && ($w.scrollTop() > ($scrollReveal.offset().top - parseInt(theDragons.core.getViewportHeight() - offset-30)))) {
+      if ((($w.scrollTop() < ($scrollReveal.offset().top - offset))) && ($w.scrollTop() > ($scrollReveal.offset().top - parseInt(theDragons.core.getViewportHeight() - offset)))) {
         $scrollReveal.css({
           transition: 'all 0.25s ease-in 0s',
           opacity: 1,
